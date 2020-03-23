@@ -23,5 +23,25 @@ namespace PizOrd
             Form1 g = new Form1();
             g.Show();
         }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 g = new Form1();
+            g.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label3.Visible = true;
+            label4.Visible = true;
+            label12.Visible = true;
+            label11.Visible = true;
+            label2.Visible = true;
+            label9.Visible = true;
+
+        }
+
+ 
     }
 }

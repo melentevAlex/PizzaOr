@@ -51,21 +51,21 @@ namespace PizOrd
         {
             if (comboBoxSelP.Text == "Грибная")
             {
-                //this.Hide();
+                this.Hide();
                 MushrForm mu = new MushrForm();
                 mu.Show();
             }
 
             if (comboBoxSelP.Text == "Сырная")
             {
-                //this.Hide();
+                this.Hide();
                 CheeseForm ch = new CheeseForm();
                 ch.Show();
             }
 
             if (comboBoxSelP.Text == "Сананасами")
             {
-                //this.Hide();
+                this.Hide();
                 AnanasaForm an = new AnanasaForm();
                 an.Show();
             }
@@ -73,7 +73,7 @@ namespace PizOrd
 
             if (comboBoxSelP.Text == "Спивком")
             {
-                //this.Hide();
+                this.Hide();
                 BeerForm bef = new BeerForm();
                 bef.Show();
             }
@@ -83,33 +83,30 @@ namespace PizOrd
 
         private void pictureBoxPiz_Click(object sender, EventArgs e)
         {
-            if (comboBoxSelP.Text == "Грибная")
-            {
-                //this.Hide();
-                MushrForm mu = new MushrForm();
-                mu.Show();
-            }
 
-            if (comboBoxSelP.Text == "Сырная")
+            switch (comboBoxSelP.Text)
             {
-                //this.Hide();
-                CheeseForm ch = new CheeseForm();
-                ch.Show();
-            }
 
-            if (comboBoxSelP.Text == "Сананасами")
-            {
-                //this.Hide();
-                AnanasaForm an = new AnanasaForm();
-                an.Show();
-            }
-
-
-            if (comboBoxSelP.Text == "Спивком")
-            {
-                //this.Hide();
-                BeerForm bef = new BeerForm();
-                bef.Show();
+                case "Грибная":
+                    this.Hide();
+                    MushrForm mu = new MushrForm();
+                    mu.Show();
+                    break;
+                case "Сырная":
+                    MushrForm ch = new MushrForm();
+                    ch.Show();
+                    break;
+                case "Сананасами":
+                    MushrForm an = new MushrForm();
+                    an.Show();
+                    break;
+                case "Спивком":
+                    MushrForm be = new MushrForm();
+                    be.Show();
+                    break;
+                default:
+                    Console.WriteLine("Pizza not selected");
+                    break;
             }
 
         }
@@ -159,6 +156,50 @@ namespace PizOrd
 
             con.Open();
 
+            {
+                if (comboBoxSelP.Text == "Спивком")
+                {
+                    string vegat = "Спивком";
+                    string q = "insert into orderTab(adress, [order]) values('" + adressTextBox.Text.ToString() + "','" + vegat.ToString() + "')";
+
+                    SqlCommand cmd = new SqlCommand(q, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Спивком олреди пекётся");
+                }
+
+
+            }
+
+            if (con.State == ConnectionState.Open)
+            {
+                if (comboBoxSelP.Text == "Грибная")
+                {
+                    string vegat = "Грибная";
+                    string q = "insert into orderTab(adress, [order]) values('" + adressTextBox.Text.ToString() + "','" + vegat.ToString() + "')";
+
+                    SqlCommand cmd = new SqlCommand(q, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Грибная олреди пекётся");
+                }
+                
+            }
+
+
+            if (con.State == ConnectionState.Open)
+            {
+                if (comboBoxSelP.Text == "Сананасами")
+                {
+                    string vegat = "Сананасами";
+                    string q = "insert into orderTab(adress, [order]) values('" + adressTextBox.Text.ToString() + "','" + vegat.ToString() + "')";
+
+                    SqlCommand cmd = new SqlCommand(q, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Сананасами олреди пекётся");
+                }
+
+            }
+
+
             if (con.State == ConnectionState.Open)
             {
                 if (comboBoxSelP.Text == "Сырная")
@@ -168,10 +209,23 @@ namespace PizOrd
 
                     SqlCommand cmd = new SqlCommand(q, con);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("connection made successfuly");
+                    MessageBox.Show("Сырная олреди пекётся");
                 }
 
             }
+            if (con.State == ConnectionState.Open)
+
+            {
+                if (comboBoxSelP.Text == "")
+                {
+
+                    MessageBox.Show("Pizza not selected");
+                }
+
+
+            }
+
+
         }
 
         private void showPizButton_MouseMove(object sender, MouseEventArgs e)
