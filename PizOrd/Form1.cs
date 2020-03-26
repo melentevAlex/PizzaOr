@@ -71,7 +71,7 @@ namespace PizOrd
             }
 
 
-            if (comboBoxSelP.Text == "Спивком")
+            if (comboBoxSelP.Text == "Вчерашняя")
             {
                 this.Hide();
                 BeerForm bef = new BeerForm();
@@ -100,7 +100,7 @@ namespace PizOrd
                     MushrForm an = new MushrForm();
                     an.Show();
                     break;
-                case "Спивком":
+                case "Вчерашняя":
                     MushrForm be = new MushrForm();
                     be.Show();
                     break;
@@ -157,14 +157,14 @@ namespace PizOrd
             con.Open();
 
             {
-                if (comboBoxSelP.Text == "Спивком")
+                if (comboBoxSelP.Text == "Вчерашняя")
                 {
-                    string vegat = "Спивком";
+                    string vegat = "Вчерашняя";
                     string q = "insert into orderTab(adress, [order]) values('" + adressTextBox.Text.ToString() + "','" + vegat.ToString() + "')";
 
                     SqlCommand cmd = new SqlCommand(q, con);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Спивком олреди пекётся");
+                    MessageBox.Show("Вчерашняя олреди пекётся");
                 }
 
 

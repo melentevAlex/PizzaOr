@@ -103,12 +103,12 @@
             "Сырная",
             "Мясная",
             "Сананасами",
-            "Спивом"});
+            "Вчерашняя"});
             this.comboBoxSelP.FormattingEnabled = true;
             this.comboBoxSelP.Items.AddRange(new object[] {
             "Грибная",
             "Сырная",
-            "Спивком",
+            "Вчерашняя",
             "Сананасами"});
             this.comboBoxSelP.Location = new System.Drawing.Point(56, 413);
             this.comboBoxSelP.Name = "comboBoxSelP";
@@ -298,7 +298,7 @@
 
         #endregion
 
-     
+
 
 
 

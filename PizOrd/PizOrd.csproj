@@ -161,6 +161,7 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="Icon1.ico" />
+    <None Include="Resources\Сананасами2.png" />
     <None Include="Resources\mainLa.png" />
     <None Include="Resources\mainPic.jpg" />
     <None Include="Resources\ф.png" />

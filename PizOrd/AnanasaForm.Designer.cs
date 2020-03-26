@@ -197,7 +197,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::PizOrd.Properties.Resources.Сананасами1;
+            this.pictureBox2.Image = global::PizOrd.Properties.Resources.Сананасами2;
             this.pictureBox2.Location = new System.Drawing.Point(55, 80);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(338, 313);
